@@ -10,15 +10,48 @@
     <div class="container">
         <!-- Coluna 1: Menu lateral com as equações -->
         <div class="column equations">
-            <h2>Equações Disponíveis</h2>
-            <ul>
-                <li><button onclick="selectEquation(1)">T(n) = T(n-1) + T(n-2) (Fibonacci)</button></li>
-                <li><button onclick="selectEquation(2)">T(n) = 2T(n-1) + 1 (Torre de Hanói)</button></li>
-                <li><button onclick="selectEquation(3)">T(n) = T(n-1) + c (Progressão Aritmética)</button></li>
-                <li><button onclick="selectEquation(4)">T(n) = aT(n-1) (Progressão Geométrica)</button></li>
-                <li><button onclick="selectEquation(5)">T(n) = aT(n-1) + b (Substituição Linear)</button></li>
-                <li><button onclick="selectEquation(6)">T(n) = T(n/2) + O(1) (Expansão Binária)</button></li>
-            </ul>
+            <h2>Equações de Recorrência Disponíveis</h2>
+            <div class="equation-item">
+                <h3>Fibonacci</h3>
+                <p><strong>Equação:</strong> T(n) = T(n-1) + T(n-2)</p>
+                <p><strong>Descrição:</strong> Cada termo é a soma dos dois anteriores. Muito utilizada para calcular a sequência de Fibonacci.</p>
+                <button onclick="selectEquation(1)">Selecionar</button>
+            </div>
+
+            <div class="equation-item">
+                <h3>Torre de Hanói</h3>
+                <p><strong>Equação:</strong> T(n) = 2T(n-1) + 1</p>
+                <p><strong>Descrição:</strong> Representa o número mínimo de movimentos para resolver o problema da Torre de Hanói.</p>
+                <button onclick="selectEquation(2)">Selecionar</button>
+            </div>
+
+            <div class="equation-item">
+                <h3>Progressão Aritmética</h3>
+                <p><strong>Equação:</strong> T(n) = T(n-1) + c</p>
+                <p><strong>Descrição:</strong> Cada termo é obtido somando uma constante ao termo anterior.</p>
+                <button onclick="selectEquation(3)">Selecionar</button>
+            </div>
+
+            <div class="equation-item">
+                <h3>Progressão Geométrica</h3>
+                <p><strong>Equação:</strong> T(n) = aT(n-1)</p>
+                <p><strong>Descrição:</strong> Cada termo é obtido multiplicando o termo anterior por uma constante.</p>
+                <button onclick="selectEquation(4)">Selecionar</button>
+            </div>
+
+            <div class="equation-item">
+                <h3>Substituição Linear</h3>
+                <p><strong>Equação:</strong> T(n) = aT(n-1) + b</p>
+                <p><strong>Descrição:</strong> Uma combinação linear do termo anterior multiplicado por uma constante e somando outra constante.</p>
+                <button onclick="selectEquation(5)">Selecionar</button>
+            </div>
+
+            <div class="equation-item">
+                <h3>Expansão Binária</h3>
+                <p><strong>Equação:</strong> T(n) = T(n/2) + O(1)</p>
+                <p><strong>Descrição:</strong> Utilizada em algoritmos de divisão e conquista, como a pesquisa binária.</p>
+                <button onclick="selectEquation(6)">Selecionar</button>
+            </div>
         </div>
 
         <!-- Coluna 2: Campos para preencher os valores -->
@@ -34,11 +67,11 @@
                 <label for="t0">Valor de T(0):</label>
                 <input type="number" id="t0" name="t0" step="0.001" required>
 
-                <label class="t1" for="t1">Valor de T(1):</label>
+                <label for="t1">Valor de T(1):</label>
                 <input type="number" id="t1" name="t1" step="0.001">
 
                 <label for="n">Calcular até T(n) para n =</label>
-                <input type="number" id="n" name="n" required step="0.001">
+                <input type="number" id="n" name="n" step="0.001" required>
 
                 <button type="submit">Calcular e Mostrar Gráfico</button>
             </form>

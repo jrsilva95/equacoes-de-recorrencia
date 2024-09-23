@@ -1,112 +1,67 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .container {
     display: flex;
-    width: 90%;
-    height: 90vh;
-    box-sizing: border-box;
-    background-color: #fff;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-}
-
-.column {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
     padding: 20px;
     box-sizing: border-box;
 }
 
+.column {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    border-right: 1px solid #ccc;
+}
+
+.column:last-child {
+    border-right: none;
+}
+
 .equations {
-    width: 25%;
-    background-color: #333;
-    color: white;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
 }
 
-.equations h2 {
-    text-align: center;
+.equation-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.equations ul {
-    list-style-type: none;
-    padding: 0;
+.equation-item h3 {
+    margin: 0 0 10px;
 }
 
-.equations ul li {
-    margin: 15px 0;
+.equation-item p {
+    margin: 5px 0;
+    font-size: 0.9em;
 }
 
-.equations ul li button {
+.equation-item button {
     background-color: #4CAF50;
     color: white;
+    padding: 8px 16px;
     border: none;
-    padding: 10px;
-    width: 100%;
-    font-size: 16px;
+    border-radius: 4px;
     cursor: pointer;
-    text-align: left;
 }
 
-.equations ul li button:hover {
+.equation-item button:hover {
     background-color: #45a049;
 }
 
 .form {
-    width: 35%;
-    background-color: #f4f4f9;
-}
-
-h1 {
-    text-align: center;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    margin-top: 10px;
-}
-
-input {
-    padding: 10px;
-    margin-top: 5px;
-    font-size: 16px;
-}
-
-button {
-    margin-top: 20px;
-    padding: 10px;
-    font-size: 16px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-#result {
-    margin-top: 20px;
-    font-size: 18px;
-    text-align: center;
+    background-color: #ffffff;
 }
 
 .graph {
-    width: 40%;
     padding: 20px;
-}
-
-canvas {
-    width: 100%;
-    height: 100%;
 }
