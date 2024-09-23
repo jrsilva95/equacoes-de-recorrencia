@@ -14,8 +14,11 @@ body {
     width: 90%;
     height: 90vh;
     box-sizing: border-box;
-    background-color: #fff;
+    background-color: #303F9F;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    border-radius: 20px;
+    color: white;
 }
 
 .columns {
