@@ -138,9 +138,9 @@ function selectEquation(eqNumber) {
     if (t1 !== undefined) {
         document.getElementById('t1').value = t1;
         document.getElementById('t1').style.display = 'block';
-        document.getElementsByClassName('t1').style.display = 'block';
+        document.getElementsByClassName('t1')[0].style.display = 'block';
     } else {
-        document.getElementsByClassName('t1').style.display = 'none';
+        document.getElementsByClassName('t1')[0].style.display = 'none';
         document.getElementById('t1').style.display = 'none';
     }
     document.getElementById('n').value = n;
