@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resolução de Equações de Recorrência</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Resolução de Equações de Recorrência</h1>
+        <form id="recurrence-form">
+            <label for="a">Valor de a:</label>
+            <input type="number" id="a" name="a" required>
+
+            <label for="b">Valor de b:</label>
+            <input type="number" id="b" name="b" required>
+
+            <label for="t0">Valor de T(0):</label>
+            <input type="number" id="t0" name="t0" required>
+
+            <label for="n">Calcular T(n) para n =</label>
+            <input type="number" id="n" name="n" required>
+
+            <button type="submit">Calcular</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
