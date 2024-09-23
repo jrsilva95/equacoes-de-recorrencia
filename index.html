@@ -12,9 +12,12 @@
         <div class="column equations">
             <h2>Equações Disponíveis</h2>
             <ul>
-                <li><button onclick="selectEquation(1)">T(n) = 2T(n-1) + 3</button></li>
+                <li><button onclick="selectEquation(1)">T(n) = T(n-1) + T(n-2) (Fibonacci)</button></li>
                 <li><button onclick="selectEquation(2)">T(n) = 2T(n-1) + 1 (Torre de Hanói)</button></li>
-                <li><button onclick="selectEquation(3)">T(n) = 3^n + T(n-1)</button></li>
+                <li><button onclick="selectEquation(3)">T(n) = T(n-1) + c (Progressão Aritmética)</button></li>
+                <li><button onclick="selectEquation(4)">T(n) = aT(n-1) (Progressão Geométrica)</button></li>
+                <li><button onclick="selectEquation(5)">T(n) = aT(n-1) + b (Substituição Linear)</button></li>
+                <li><button onclick="selectEquation(6)">T(n) = T(n/2) + O(1) (Expansão Binária)</button></li>
             </ul>
         </div>
 
@@ -30,6 +33,9 @@
 
                 <label for="t0">Valor de T(0):</label>
                 <input type="number" id="t0" name="t0" required>
+
+                <label for="t1">Valor de T(1):</label>
+                <input type="number" id="t1" name="t1">
 
                 <label for="n">Calcular até T(n) para n =</label>
                 <input type="number" id="n" name="n" required>

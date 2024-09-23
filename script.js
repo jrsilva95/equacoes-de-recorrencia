@@ -4,19 +4,32 @@ document.getElementById('recurrence-form').addEventListener('submit', function(e
     const a = parseFloat(document.getElementById('a').value);
     const b = parseFloat(document.getElementById('b').value);
     const t0 = parseFloat(document.getElementById('t0').value);
+    const t1 = parseFloat(document.getElementById('t1').value) || 0; // T(1) for Fibonacci and similar cases
     const n = parseInt(document.getElementById('n').value);
 
-    function solveRecurrence(a, b, t0, n) {
+    function solveRecurrence(a, b, t0, t1, n, equationType) {
         let results = [t0];
         let tn = t0;
-        for (let i = 1; i <= n; i++) {
-            tn = a * tn + b;
-            results.push(tn);
+
+        if (equationType === 'fibonacci') {
+            // Fibonacci requires T(n-2)
+            results.push(t1);
+            for (let i = 2; i <= n; i++) {
+                tn = results[i-1] + results[i-2];
+                results.push(tn);
+            }
+        } else {
+            // General linear recurrence T(n) = aT(n-1) + b
+            for (let i = 1; i <= n; i++) {
+                tn = a * tn + b;
+                results.push(tn);
+            }
         }
         return results;
     }
 
-    const recurrenceValues = solveRecurrence(a, b, t0, n);
+    const equationType = document.getElementById('recurrence-form').dataset.equationType || 'linear';
+    const recurrenceValues = solveRecurrence(a, b, t0, t1, n, equationType);
     document.getElementById('result').innerHTML = `T(${n}) = ${recurrenceValues[n]}`;
 
     const labels = Array.from({ length: n + 1 }, (_, i) => i);
@@ -64,29 +77,57 @@ document.getElementById('recurrence-form').addEventListener('submit', function(e
 
 // Função para preencher o formulário com valores ao clicar em uma equação
 function selectEquation(eqNumber) {
-    let a, b, t0, n;
+    let a, b, t0, t1, n, equationType;
 
     switch (eqNumber) {
         case 1:
-            // T(n) = 2T(n-1) + 3
-            a = 2;
-            b = 3;
-            t0 = 4;  // Supondo T(0) = 4
-            n = 5;
+            // Fibonacci: T(n) = T(n-1) + T(n-2)
+            equationType = 'fibonacci';
+            a = 1;
+            b = 0;  // Not used in Fibonacci
+            t0 = 0;
+            t1 = 1;
+            n = 10;
             break;
         case 2:
             // T(n) = 2T(n-1) + 1 (Torre de Hanói)
+            equationType = 'linear';
             a = 2;
             b = 1;
-            t0 = 0;
-            n = 5;
+            t0 = 1;
+            n = 10;
             break;
         case 3:
-            // T(n) = 3^n + T(n-1)
-            a = 1;  // T(n-1) multiplicado por 1
-            b = Math.pow(3, n);  // 3^n (calculado dinamicamente)
+            // Progressão Aritmética: T(n) = T(n-1) + c
+            equationType = 'linear';
+            a = 1;
+            b = 3; // c
+            t0 = 2;
+            n = 10;
+            break;
+        case 4:
+            // Progressão Geométrica: T(n) = aT(n-1)
+            equationType = 'linear';
+            a = 2;
+            b = 0; // No additive constant in geometric progression
             t0 = 1;
-            n = 5;
+            n = 10;
+            break;
+        case 5:
+            // Substituição Linear: T(n) = aT(n-1) + b
+            equationType = 'linear';
+            a = 3;
+            b = 2;
+            t0 = 4;
+            n = 10;
+            break;
+        case 6:
+            // Expansão Binária: T(n) = T(n/2) + O(1)
+            equationType = 'linear'; // Approximation, assume O(1) = 1
+            a = 0.5;
+            b = 1;
+            t0 = 1;
+            n = 10;
             break;
     }
 
@@ -94,8 +135,14 @@ function selectEquation(eqNumber) {
     document.getElementById('a').value = a;
     document.getElementById('b').value = b;
     document.getElementById('t0').value = t0;
+    if (t1 !== undefined) {
+        document.getElementById('t1').value = t1;
+        document.getElementById('t1').style.display = 'block';
+    } else {
+        document.getElementById('t1').style.display = 'none';
+    }
     document.getElementById('n').value = n;
 
-    // Simular o envio do formulário para calcular o resultado
-    document.getElementById('recurrence-form').dispatchEvent(new Event('submit'));
+    // Adicionar o tipo de equação no dataset
+    document.getElementById('recurrence-form').dataset.equationType = equationType;
 }
