@@ -4,10 +4,9 @@ document.getElementById('recurrence-form').addEventListener('submit', function(e
     const a = parseFloat(document.getElementById('a').value);
     const b = parseFloat(document.getElementById('b').value);
     const t0 = parseFloat(document.getElementById('t0').value);
-    const t1 = parseFloat(document.getElementById('t1').value) || 0; 
     const n = parseInt(document.getElementById('n').value);
 
-    function solveRecurrence(a, b, t0, t1, n, equationType) {
+    function solveRecurrence(a, b, t0, n, equationType) {
         let results = [t0];
         let tn = t0;
 
@@ -20,7 +19,7 @@ document.getElementById('recurrence-form').addEventListener('submit', function(e
     }
 
     const equationType = document.getElementById('recurrence-form').dataset.equationType || 'linear';
-    const recurrenceValues = solveRecurrence(a, b, t0, t1, n, equationType);
+    const recurrenceValues = solveRecurrence(a, b, t0, n, equationType);
     document.getElementById('result').innerHTML = `T(${n}) = ${recurrenceValues[n]}`;
 
     const labels = Array.from({ length: n + 1 }, (_, i) => i);
@@ -68,7 +67,7 @@ document.getElementById('recurrence-form').addEventListener('submit', function(e
 
 // Função para preencher o formulário com valores ao clicar em uma equação
 function selectEquation(eqNumber) {
-    let a, b, t0, t1, n, equationType;
+    let a, b, t0, n, equationType;
 
     switch (eqNumber) {
         case 2:
@@ -117,7 +116,7 @@ function selectEquation(eqNumber) {
     document.getElementById('a').value = a;
     document.getElementById('b').value = b;
     document.getElementById('t0').value = t0;
-    
+
     document.getElementById('n').value = n;
 
     // Adicionar o tipo de equação no dataset
