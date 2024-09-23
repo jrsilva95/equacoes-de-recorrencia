@@ -7,35 +7,43 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="sidebar">
-        <h2>Equações Disponíveis</h2>
-        <ul>
-            <li><button onclick="selectEquation(1)">T(n) = 2T(n-1) + 3</button></li>
-            <li><button onclick="selectEquation(2)">T(n) = 2T(n-1) + 1 (Torre de Hanói)</button></li>
-            <li><button onclick="selectEquation(3)">T(n) = 3^n + T(n-1)</button></li>
-        </ul>
-    </div>
-
     <div class="container">
-        <h1>Resolução de Equações de Recorrência</h1>
-        <form id="recurrence-form">
-            <label for="a">Valor de a:</label>
-            <input type="number" id="a" name="a" required>
+        <!-- Coluna 1: Menu lateral com as equações -->
+        <div class="column equations">
+            <h2>Equações Disponíveis</h2>
+            <ul>
+                <li><button onclick="selectEquation(1)">T(n) = 2T(n-1) + 3</button></li>
+                <li><button onclick="selectEquation(2)">T(n) = 2T(n-1) + 1 (Torre de Hanói)</button></li>
+                <li><button onclick="selectEquation(3)">T(n) = 3^n + T(n-1)</button></li>
+            </ul>
+        </div>
 
-            <label for="b">Valor de b:</label>
-            <input type="number" id="b" name="b" required>
+        <!-- Coluna 2: Campos para preencher os valores -->
+        <div class="column form">
+            <h1>Resolução de Equações de Recorrência</h1>
+            <form id="recurrence-form">
+                <label for="a">Valor de a:</label>
+                <input type="number" id="a" name="a" required>
 
-            <label for="t0">Valor de T(0):</label>
-            <input type="number" id="t0" name="t0" required>
+                <label for="b">Valor de b:</label>
+                <input type="number" id="b" name="b" required>
 
-            <label for="n">Calcular até T(n) para n =</label>
-            <input type="number" id="n" name="n" required>
+                <label for="t0">Valor de T(0):</label>
+                <input type="number" id="t0" name="t0" required>
 
-            <button type="submit">Calcular e Mostrar Gráfico</button>
-        </form>
+                <label for="n">Calcular até T(n) para n =</label>
+                <input type="number" id="n" name="n" required>
 
-        <div id="result"></div>
-        <canvas id="recurrenceChart"></canvas>
+                <button type="submit">Calcular e Mostrar Gráfico</button>
+            </form>
+
+            <div id="result"></div>
+        </div>
+
+        <!-- Coluna 3: Gráfico -->
+        <div class="column graph">
+            <canvas id="recurrenceChart"></canvas>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
