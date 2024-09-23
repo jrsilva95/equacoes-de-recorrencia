@@ -31,6 +31,16 @@ body {
 
 .equation-item {
     cursor: pointer;
+    border: 1px solid white;
+    border-radius: 11px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.equation-item * {
+    padding: 0;
+    margin: 0;
 }
 
 .equations h2 {
