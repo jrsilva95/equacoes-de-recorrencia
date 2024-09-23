@@ -29,6 +29,10 @@ body {
     color: white;
 }
 
+.equation-item {
+    cursor: pointer;
+}
+
 .equations h2 {
     text-align: center;
 }

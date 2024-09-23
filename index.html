@@ -11,46 +11,40 @@
         <!-- Coluna 1: Menu lateral com as equações -->
         <div class="column equations">
             <h2>Equações de Recorrência Disponíveis</h2>
-            <div class="equation-item">
+            <div class="equation-item" onclick="selectEquation(1)">
                 <h3>Fibonacci</h3>
                 <p><strong>Equação:</strong> T(n) = T(n-1) + T(n-2)</p>
                 <p><strong>Descrição:</strong> Cada termo é a soma dos dois anteriores. Muito utilizada para calcular a sequência de Fibonacci.</p>
-                <button onclick="selectEquation(1)">Selecionar</button>
             </div>
 
-            <div class="equation-item">
+            <div class="equation-item" onclick="selectEquation(2)">
                 <h3>Torre de Hanói</h3>
                 <p><strong>Equação:</strong> T(n) = 2T(n-1) + 1</p>
                 <p><strong>Descrição:</strong> Representa o número mínimo de movimentos para resolver o problema da Torre de Hanói.</p>
-                <button onclick="selectEquation(2)">Selecionar</button>
             </div>
 
-            <div class="equation-item">
+            <div class="equation-item" onclick="selectEquation(3)">
                 <h3>Progressão Aritmética</h3>
                 <p><strong>Equação:</strong> T(n) = T(n-1) + c</p>
                 <p><strong>Descrição:</strong> Cada termo é obtido somando uma constante ao termo anterior.</p>
-                <button onclick="selectEquation(3)">Selecionar</button>
             </div>
 
-            <div class="equation-item">
+            <div class="equation-item" onclick="selectEquation(4)">
                 <h3>Progressão Geométrica</h3>
                 <p><strong>Equação:</strong> T(n) = aT(n-1)</p>
                 <p><strong>Descrição:</strong> Cada termo é obtido multiplicando o termo anterior por uma constante.</p>
-                <button onclick="selectEquation(4)">Selecionar</button>
             </div>
 
-            <div class="equation-item">
+            <div class="equation-item" onclick="selectEquation(5)">
                 <h3>Substituição Linear</h3>
                 <p><strong>Equação:</strong> T(n) = aT(n-1) + b</p>
                 <p><strong>Descrição:</strong> Uma combinação linear do termo anterior multiplicado por uma constante e somando outra constante.</p>
-                <button onclick="selectEquation(5)">Selecionar</button>
             </div>
 
-            <div class="equation-item">
+            <div class="equation-item" onclick="selectEquation(6)">
                 <h3>Expansão Binária</h3>
                 <p><strong>Equação:</strong> T(n) = T(n/2) + O(1)</p>
                 <p><strong>Descrição:</strong> Utilizada em algoritmos de divisão e conquista, como a pesquisa binária.</p>
-                <button onclick="selectEquation(6)">Selecionar</button>
             </div>
         </div>
 
