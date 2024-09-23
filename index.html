@@ -19,15 +19,18 @@
             <label for="t0">Valor de T(0):</label>
             <input type="number" id="t0" name="t0" required>
 
-            <label for="n">Calcular T(n) para n =</label>
+            <label for="n">Calcular até T(n) para n =</label>
             <input type="number" id="n" name="n" required>
 
-            <button type="submit">Calcular</button>
+            <button type="submit">Calcular e Mostrar Gráfico</button>
         </form>
 
         <div id="result"></div>
+
+        <canvas id="recurrenceChart"></canvas>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
