@@ -26,19 +26,19 @@
             <h1>Resolução de Equações de Recorrência</h1>
             <form id="recurrence-form">
                 <label for="a">Valor de a:</label>
-                <input type="number" id="a" name="a" required>
+                <input type="number" id="a" name="a" step="0.001" required>
 
                 <label for="b">Valor de b:</label>
-                <input type="number" id="b" name="b" required>
+                <input type="number" id="b" name="b" step="0.001" required>
 
                 <label for="t0">Valor de T(0):</label>
-                <input type="number" id="t0" name="t0" required>
+                <input type="number" id="t0" name="t0" step="0.001" required>
 
-                <label for="t1">Valor de T(1):</label>
-                <input type="number" id="t1" name="t1">
+                <label class="t1" for="t1">Valor de T(1):</label>
+                <input type="number" id="t1" name="t1" step="0.001">
 
                 <label for="n">Calcular até T(n) para n =</label>
-                <input type="number" id="n" name="n" required>
+                <input type="number" id="n" name="n" required step="0.001">
 
                 <button type="submit">Calcular e Mostrar Gráfico</button>
             </form>
