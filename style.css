@@ -23,6 +23,7 @@ body {
 
 .columns {
     display: flex;
+    background-color: #3F51B5;
 }
 
 .column {
@@ -32,7 +33,6 @@ body {
 
 .equations {
     width: 25%;
-    background-color: #333;
     color: white;
 }
 
@@ -42,7 +42,7 @@ body {
     border-radius: 11px;
     padding: 10px;
     margin-bottom: 10px;
-    background-color: rgba(255, 255, 255, 0.2);
+    /*background-color: rgba(255, 255, 255, 0.2);*/
 }
 
 .equation-item * {
