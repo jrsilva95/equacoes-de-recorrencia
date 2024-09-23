@@ -8,68 +8,78 @@
 </head>
 <body>
     <div class="container">
+        
+        <h1>Calculadora de Equações de Recorrencia</h1>
+
+        <div class="columns">
         <!-- Coluna 1: Menu lateral com as equações -->
-        <div class="column equations">
-            <h2>Equações de Recorrência Disponíveis</h2>
-            <h3>T(n) = aT(n−1) + b</h3>
+            <div class="column equations">
+                <h2>Exemplos de equações de recorrência</h2>
 
-            <div class="equation-item" onclick="selectEquation(2)">
-                <h3>Torre de Hanói</h3>
-                <p>T(n) = 2T(n-1) + 1</p>
-                <p>Representa o número mínimo de movimentos para resolver o problema da Torre de Hanói.</p>
+                <div class="equation-item" onclick="selectEquation(2)">
+                    <h3>Torre de Hanói</h3>
+                    <p>T(n) = 2T(n-1) + 1</p>
+                    <p>Representa o número mínimo de movimentos para resolver o problema da Torre de Hanói.</p>
+                </div>
+
+                <div class="equation-item" onclick="selectEquation(3)">
+                    <h3>Progressão Aritmética</h3>
+                    <p>T(n) = T(n-1) + c</p>
+                    <p>Cada termo é obtido somando uma constante ao termo anterior.</p>
+                </div>
+
+                <div class="equation-item" onclick="selectEquation(4)">
+                    <h3>Progressão Geométrica</h3>
+                    <p>T(n) = aT(n-1)</p>
+                    <p>Cada termo é obtido multiplicando o termo anterior por uma constante.</p>
+                </div>
+
+                <div class="equation-item" onclick="selectEquation(5)">
+                    <h3>Substituição Linear</h3>
+                    <p>T(n) = aT(n-1) + b</p>
+                    <p>Uma combinação linear do termo anterior multiplicado por uma constante e somando outra constante.</p>
+                </div>
+
+                <div class="equation-item" onclick="selectEquation(6)">
+                    <h3>Expansão Binária</h3>
+                    <p>T(n) = T(n/2) + O(1)</p>
+                    <p>Utilizada em algoritmos de divisão e conquista, como a pesquisa binária.</p>
+                </div>
             </div>
 
-            <div class="equation-item" onclick="selectEquation(3)">
-                <h3>Progressão Aritmética</h3>
-                <p>T(n) = T(n-1) + c</p>
-                <p>Cada termo é obtido somando uma constante ao termo anterior.</p>
+            <!-- Coluna 2: Campos para preencher os valores -->
+            <div class="column form">
+                <h1>Dados da equação de recorrência</h1>
+                <h2>T(n) = aT(n−1) + b</h2>
+
+                <form id="recurrence-form">
+                    <label for="a">Valor de a:</label>
+                    <input type="number" id="a" name="a" step="0.001" required>
+
+                    <label for="b">Valor de b:</label>
+                    <input type="number" id="b" name="b" step="0.001" required>
+
+                    <label for="t0">Valor de T(0):</label>
+                    <input type="number" id="t0" name="t0" step="0.001" required>
+
+                    <label for="n">Calcular até T(n) para n =</label>
+                    <input type="number" id="n" name="n" step="0.001" required>
+
+                    <button type="submit">Calcular e Mostrar Gráfico</button>
+                </form>
+
+                <div id="result"></div>
             </div>
 
-            <div class="equation-item" onclick="selectEquation(4)">
-                <h3>Progressão Geométrica</h3>
-                <p>T(n) = aT(n-1)</p>
-                <p>Cada termo é obtido multiplicando o termo anterior por uma constante.</p>
+            <!-- Coluna 3: Gráfico -->
+            <div class="column graph">
+                <canvas id="recurrenceChart"></canvas>
             </div>
 
-            <div class="equation-item" onclick="selectEquation(5)">
-                <h3>Substituição Linear</h3>
-                <p>T(n) = aT(n-1) + b</p>
-                <p>Uma combinação linear do termo anterior multiplicado por uma constante e somando outra constante.</p>
-            </div>
-
-            <div class="equation-item" onclick="selectEquation(6)">
-                <h3>Expansão Binária</h3>
-                <p>T(n) = T(n/2) + O(1)</p>
-                <p>Utilizada em algoritmos de divisão e conquista, como a pesquisa binária.</p>
-            </div>
         </div>
 
-        <!-- Coluna 2: Campos para preencher os valores -->
-        <div class="column form">
-            <h1>Dados da equação de recorrência</h1>
-            <form id="recurrence-form">
-                <label for="a">Valor de a:</label>
-                <input type="number" id="a" name="a" step="0.001" required>
+        <p>Trabalho desenvolvideo durante a disciplina de matemática discreta na UFERSA</p>
 
-                <label for="b">Valor de b:</label>
-                <input type="number" id="b" name="b" step="0.001" required>
-
-                <label for="t0">Valor de T(0):</label>
-                <input type="number" id="t0" name="t0" step="0.001" required>
-
-                <label for="n">Calcular até T(n) para n =</label>
-                <input type="number" id="n" name="n" step="0.001" required>
-
-                <button type="submit">Calcular e Mostrar Gráfico</button>
-            </form>
-
-            <div id="result"></div>
-        </div>
-
-        <!-- Coluna 3: Gráfico -->
-        <div class="column graph">
-            <canvas id="recurrenceChart"></canvas>
-        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
