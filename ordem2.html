@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Equações de Recorrência de Ordem 2</title>
     <link rel="stylesheet" href="style.css">
     <link
@@ -18,19 +17,19 @@
         </div>
 
         <div class="tabs">
-            <div class="tab">
-                1ª Ordem Homogênea
+            <div class="tab" onclick="window.location.href ='./'">
+                1ª Ordem
             </div>
-            <div class="tab">
-                2ª Ordem Homogênea
+            <div class="tab active" onclick="window.location.href ='./ordem2.html'">
+                2ª Ordem
             </div>
-            <div class="tab">
-                2ª Ordem Não Homogênea
+            <div class="tab" onclick="window.location.href ='ordem22.html'">
+                Formula Geral 2ª Ordem
             </div>
         </div>
 
         <div class="columns">
-            <!-- Coluna 1: Menu lateral com as equações de ordem 2 -->
+
             <div class="column equations">
                 
                 <h2>Exemplos de equações de recorrência 2ª Ordem</h2>
@@ -60,7 +59,6 @@
                 </div>
             </div>
 
-            <!-- Coluna 2: Campos para preencher os valores -->
             <div class="column form">
 
                 <h2>Dados da equação de recorrência 2ª Ordem</h2>
@@ -82,7 +80,7 @@
                     <label for="n">Calcular até T(n) para n =</label>
                     <input type="number" id="n" name="n" required>
 
-                    <button type="submit">Calcular e Mostrar Gráfico</button>
+                    <button type="submit" id="submitButton">Calcular</button>
                 </form>
 
                 <div id="result">
