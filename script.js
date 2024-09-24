@@ -40,6 +40,7 @@ document.getElementById('recurrence-form').addEventListener('submit', function(e
         data: data,
         options: {
             responsive: true,
+            maintainAspectRatio: false,
             scales: {
                 x: {
                     title: {
@@ -121,4 +122,6 @@ function selectEquation(eqNumber) {
 
     // Adicionar o tipo de equação no dataset
     document.getElementById('recurrence-form').dataset.equationType = equationType;
+
+    document.getElementById('submitButton').click()
 }

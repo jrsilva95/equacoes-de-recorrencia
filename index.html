@@ -5,11 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resolução de Equações de Recorrência</title>
     <link rel="stylesheet" href="style.css">
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css"
+    />
 </head>
 <body>
     <div class="container">
-        
-        <h1>Calculadora de Equações de Recorrencia</h1>
+
+        <div>
+            <h1>Calculadora de Equações de Recorrencia</h1>
+        </div>
 
         <div class="columns">
         <!-- Coluna 1: Menu lateral com as equações -->
@@ -18,38 +24,38 @@
 
                 <div class="equation-item" onclick="selectEquation(2)">
                     <h3>Torre de Hanói</h3>
-                    <p>T(n) = 2T(n-1) + 1</p>
+                    <strong>T(n) = 2T(n-1) + 1</strong>
                     <p>Representa o número mínimo de movimentos para resolver o problema da Torre de Hanói.</p>
                 </div>
 
                 <div class="equation-item" onclick="selectEquation(3)">
                     <h3>Progressão Aritmética</h3>
-                    <p>T(n) = T(n-1) + c</p>
+                    <strong>T(n) = T(n-1) + c</strong>
                     <p>Cada termo é obtido somando uma constante ao termo anterior.</p>
                 </div>
 
                 <div class="equation-item" onclick="selectEquation(4)">
                     <h3>Progressão Geométrica</h3>
-                    <p>T(n) = aT(n-1)</p>
+                    <strong>T(n) = aT(n-1)</strong>
                     <p>Cada termo é obtido multiplicando o termo anterior por uma constante.</p>
                 </div>
 
                 <div class="equation-item" onclick="selectEquation(5)">
                     <h3>Substituição Linear</h3>
-                    <p>T(n) = aT(n-1) + b</p>
+                    <strong>T(n) = aT(n-1) + b</strong>
                     <p>Uma combinação linear do termo anterior multiplicado por uma constante e somando outra constante.</p>
                 </div>
 
                 <div class="equation-item" onclick="selectEquation(6)">
                     <h3>Expansão Binária</h3>
-                    <p>T(n) = T(n/2) + O(1)</p>
+                    <strong>T(n) = T(n/2) + O(1)</strong>
                     <p>Utilizada em algoritmos de divisão e conquista, como a pesquisa binária.</p>
                 </div>
             </div>
 
             <!-- Coluna 2: Campos para preencher os valores -->
             <div class="column form">
-                <h1>Dados da equação de recorrência</h1>
+                <h2>Dados da equação de recorrência</h2>
                 <h2>T(n) = aT(n−1) + b</h2>
 
                 <form id="recurrence-form">
@@ -65,24 +71,37 @@
                     <label for="n">Calcular até T(n) para n =</label>
                     <input type="number" id="n" name="n" step="0.001" required>
 
-                    <button type="submit">Calcular e Mostrar Gráfico</button>
+                    <button type="submit" id="submitButton">Calcular</button>
                 </form>
 
-                <div id="result"></div>
+                <div id="result">
+                    Resultado
+                </div>
             </div>
 
             <!-- Coluna 3: Gráfico -->
-            <div class="column graph">
-                <canvas id="recurrenceChart"></canvas>
+            <div class="column col-graph">
+                <div class="graph">
+                    <canvas id="recurrenceChart"></canvas>
+                </div>
             </div>
 
         </div>
 
-        <p>Trabalho desenvolvideo durante a disciplina de matemática discreta na UFERSA</p>
+        <div class="info">
+            <p>Trabalho desenvolvido durante a disciplina de matemática discreta na UFERSA</p>
+        </div>
 
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+    <script>
+        new SimpleBar(document.getElementsByClassName('equations')[0], {
+            autoHide: false,
+        });
+        new SimpleBar(document.getElementsByClassName('form')[0]);
+    </script>
 </body>
 </html>
