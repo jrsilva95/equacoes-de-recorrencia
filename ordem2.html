@@ -8,67 +8,80 @@
 </head>
 <body>
     <div class="container">
-        <!-- Coluna 1: Menu lateral com as equações de ordem 2 -->
-        <div class="column equations">
-            <h2>Equações de Recorrência de Ordem 2</h2>
-            <div class="equation-item">
-                <h3>Fibonacci</h3>
-                <p><strong>Equação:</strong> T(n) = T(n-1) + T(n-2)</p>
-                <p><strong>Descrição:</strong> Cada termo é a soma dos dois anteriores, famosa pela sequência de Fibonacci.</p>
-                <button onclick="selectEquation(1)">Selecionar</button>
-            </div>
 
-            <div class="equation-item">
-                <h3>Equação de Segunda Ordem Linear</h3>
-                <p><strong>Equação:</strong> T(n) = aT(n-1) + bT(n-2)</p>
-                <p><strong>Descrição:</strong> Representa uma combinação linear dos dois últimos termos da sequência.</p>
-                <button onclick="selectEquation(2)">Selecionar</button>
-            </div>
-
-            <div class="equation-item">
-                <h3>Equação Homogênea</h3>
-                <p><strong>Equação:</strong> T(n) = aT(n-1) + bT(n-2)</p>
-                <p><strong>Descrição:</strong> Forma homogênea com coeficientes constantes.</p>
-                <button onclick="selectEquation(3)">Selecionar</button>
-            </div>
-
-            <div class="equation-item">
-                <h3>Equação Não Homogênea</h3>
-                <p><strong>Equação:</strong> T(n) = aT(n-1) + bT(n-2) + f(n)</p>
-                <p><strong>Descrição:</strong> Equação de segunda ordem não homogênea, com termo dependente de n.</p>
-                <button onclick="selectEquation(4)">Selecionar</button>
-            </div>
+        <div></div>
+            <h1>Calculadora de Equações de Recorrencia</h1>
         </div>
 
-        <!-- Coluna 2: Campos para preencher os valores -->
-        <div class="column form">
-            <h1>Resolução de Equações de Recorrência de Ordem 2</h1>
-            <form id="recurrence-form">
-                <label for="a">Valor de a:</label>
-                <input type="number" id="a" name="a" required>
+        <div class="columns">
+            <!-- Coluna 1: Menu lateral com as equações de ordem 2 -->
+            <div class="column equations">
+                <h2>Equações de Recorrência de Ordem 2</h2>
+                <div class="equation-item">
+                    <h3>Fibonacci</h3>
+                    <p><strong>Equação:</strong> T(n) = T(n-1) + T(n-2)</p>
+                    <p><strong>Descrição:</strong> Cada termo é a soma dos dois anteriores, famosa pela sequência de Fibonacci.</p>
+                    <button onclick="selectEquation(1)">Selecionar</button>
+                </div>
 
-                <label for="b">Valor de b:</label>
-                <input type="number" id="b" name="b" required>
+                <div class="equation-item">
+                    <h3>Equação de Segunda Ordem Linear</h3>
+                    <p><strong>Equação:</strong> T(n) = aT(n-1) + bT(n-2)</p>
+                    <p><strong>Descrição:</strong> Representa uma combinação linear dos dois últimos termos da sequência.</p>
+                    <button onclick="selectEquation(2)">Selecionar</button>
+                </div>
 
-                <label for="t0">Valor de T(0):</label>
-                <input type="number" id="t0" name="t0" required>
+                <div class="equation-item">
+                    <h3>Equação Homogênea</h3>
+                    <p><strong>Equação:</strong> T(n) = aT(n-1) + bT(n-2)</p>
+                    <p><strong>Descrição:</strong> Forma homogênea com coeficientes constantes.</p>
+                    <button onclick="selectEquation(3)">Selecionar</button>
+                </div>
 
-                <label for="t1">Valor de T(1):</label>
-                <input type="number" id="t1" name="t1" required>
+                <div class="equation-item">
+                    <h3>Equação Não Homogênea</h3>
+                    <p><strong>Equação:</strong> T(n) = aT(n-1) + bT(n-2) + f(n)</p>
+                    <p><strong>Descrição:</strong> Equação de segunda ordem não homogênea, com termo dependente de n.</p>
+                    <button onclick="selectEquation(4)">Selecionar</button>
+                </div>
+            </div>
 
-                <label for="n">Calcular até T(n) para n =</label>
-                <input type="number" id="n" name="n" required>
+            <!-- Coluna 2: Campos para preencher os valores -->
+            <div class="column form">
+                <h1>Resolução de Equações de Recorrência de Ordem 2</h1>
+                <form id="recurrence-form">
+                    <label for="a">Valor de a:</label>
+                    <input type="number" id="a" name="a" required>
 
-                <button type="submit">Calcular e Mostrar Gráfico</button>
-            </form>
+                    <label for="b">Valor de b:</label>
+                    <input type="number" id="b" name="b" required>
 
-            <div id="result"></div>
+                    <label for="t0">Valor de T(0):</label>
+                    <input type="number" id="t0" name="t0" required>
+
+                    <label for="t1">Valor de T(1):</label>
+                    <input type="number" id="t1" name="t1" required>
+
+                    <label for="n">Calcular até T(n) para n =</label>
+                    <input type="number" id="n" name="n" required>
+
+                    <button type="submit">Calcular e Mostrar Gráfico</button>
+                </form>
+
+                <div id="result"></div>
+            </div>
+
+            <!-- Coluna 3: Gráfico -->
+            <div class="column graph">
+                <canvas id="recurrenceChart"></canvas>
+            </div>
+
         </div>
 
-        <!-- Coluna 3: Gráfico -->
-        <div class="column graph">
-            <canvas id="recurrenceChart"></canvas>
+        <div class="info">
+            <p>Trabalho desenvolvido durante a disciplina de matemática discreta na UFERSA</p>
         </div>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
