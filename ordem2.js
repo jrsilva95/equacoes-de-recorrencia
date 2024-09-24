@@ -78,7 +78,7 @@ document.getElementById('recurrence-form').addEventListener('submit', function(e
     window.myChart = new Chart(ctx, config);
 });
 
-// Função para preencher o formulário com valores ao clicar em uma equação
+
 function selectEquation(eqNumber) {
     let a, b, t0, t1, n, equationType;
 
@@ -130,4 +130,7 @@ function selectEquation(eqNumber) {
 
     // Adicionar o tipo de equação no dataset
     document.getElementById('recurrence-form').dataset.equationType = equationType;
+
+    document.getElementById('submitButton').click()
+
 }

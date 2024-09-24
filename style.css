@@ -29,7 +29,7 @@ body {
 .column {
     padding: 20px;
     box-sizing: border-box;
-    height: calc(95vh - 130px);
+    height: calc(95vh - 160px);
 }
 
 .equations {
@@ -45,6 +45,29 @@ body {
     padding: 10px;
     margin-bottom: 10px;
     /*background-color: rgba(255, 255, 255, 0.2);*/
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.tab {
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.tab.active {
+    background-color: #3F51B5;
+}
+
+.tab:hover {
+    background-color: #3F51B5;
+
 }
 
 .equation-item * {
@@ -68,6 +91,11 @@ body {
 }
 
 .form h2 {
+    text-align: center;
+    margin: 0 0 10px 0;
+}
+
+.form-2 h2 {
     text-align: center;
     margin: 0 0 10px 0;
 }
@@ -102,6 +130,12 @@ body {
     overflow-y: auto;
 }
 
+.form-2 {
+    /*background-color: #f4f4f9;*/
+    overflow-y: auto;
+}
+
+
 h1 {
     text-align: center;
 }
@@ -112,17 +146,17 @@ form {
 }
 
 label {
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 input {
-    padding: 10px;
+    padding: 5px;
     margin-top: 5px;
     font-size: 16px;
 }
 
 button {
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 10px;
     font-size: 16px;
     background-color: #009688;

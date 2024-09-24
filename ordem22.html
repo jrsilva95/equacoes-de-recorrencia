@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Equações de Recorrência de Ordem 2</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css"
+    />
+</head>
+<body>
+    <div class="container">
+
+        <div>
+            <h1>Calculadora de Equações de Recorrencia</h1>
+        </div>
+
+        <div class="tabs">
+            <div class="tab" onclick="window.location.href ='./'">
+                1ª Ordem
+            </div>
+            <div class="tab" onclick="window.location.href ='./ordem2.html'">
+                2ª Ordem
+            </div>
+            <div class="tab active" onclick="window.location.href ='ordem22.html'">
+                Formula Geral 2ª Ordem
+            </div>
+        </div>
+
+        <div class="columns">
+
+            <div class="column equations">
+
+                <h2>Exemplos</h2>
+
+                <div class="equation-item" onclick="selectEquation(1)">
+                    <h3>Raízes Reais Distintas</h3>
+                    <p>a = 1, b = -5, c = 6</p>
+                </div>
+
+                <div class="equation-item" onclick="selectEquation(2)">
+                    <h3>Raízes Reais Iguais</h3>
+                    <p>a = 1, b = -4, c = 4</p>
+                </div>
+
+                <div class="equation-item" onclick="selectEquation(3)">
+                    <h3>Raízes Complexas</h3>
+                    <p>a = 1, b = 2, c = 5</p>
+                </div>
+
+            </div>
+
+            <div class="column form">
+
+                <h2>Dados da equação de recorrência 2ª Ordem Não Homogênea</h2>
+                <h2>aXn+2 + bX+2 + cXn = 0</h2>
+
+                <form id="recurrence-form">
+                        <label for="a">Valor de a:</label>
+                        <input type="number" id="a" name="a" required>
+
+                        <label for="b">Valor de b:</label>
+                        <input type="number" id="b" name="b" required>
+
+                        <label for="c">Valor de c:</label>
+                        <input type="number" id="c" name="c" required>
+
+                    <button type="submit" id="submitButton">Calcular</button>
+                </form>
+
+
+            </div>
+
+            <div class="column col-graph">
+                <div class="graph" style="display: flex; justify-content: center; align-items: center">
+                    <div id="result" style="text-align: justify">
+                        Clique em um exemplo,<br> ou <br> Inisira os dados<br>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="info">
+            <p>Trabalho desenvolvido durante a disciplina de matemática discreta na UFERSA</p>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="ordem22.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+    <script>
+        new SimpleBar(document.getElementsByClassName('form-2')[0]);
+    </script>
+</body>
+</html>

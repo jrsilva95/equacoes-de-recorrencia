@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resolução de Equações de Recorrência</title>
     <link rel="stylesheet" href="style.css">
     <link
@@ -17,8 +16,20 @@
             <h1>Calculadora de Equações de Recorrencia</h1>
         </div>
 
+        <div class="tabs">
+            <div class="tab active" onclick="window.location.href ='./'">
+                1ª Ordem
+            </div>
+            <div class="tab" onclick="window.location.href ='./ordem2.html'">
+                2ª Ordem
+            </div>
+            <div class="tab" onclick="window.location.href ='ordem22.html'">
+                Formula Geral 2ª Ordem
+            </div>
+        </div>
+
         <div class="columns">
-        <!-- Coluna 1: Menu lateral com as equações -->
+
             <div class="column equations">
                 <h2>Exemplos de equações de recorrência</h2>
 
@@ -53,7 +64,6 @@
                 </div>
             </div>
 
-            <!-- Coluna 2: Campos para preencher os valores -->
             <div class="column form">
                 <h2>Dados da equação de recorrência</h2>
                 <h2>T(n) = aT(n−1) + b</h2>
@@ -79,7 +89,6 @@
                 </div>
             </div>
 
-            <!-- Coluna 3: Gráfico -->
             <div class="column col-graph">
                 <div class="graph">
                     <canvas id="recurrenceChart"></canvas>

@@ -66,7 +66,6 @@ document.getElementById('recurrence-form').addEventListener('submit', function(e
     window.myChart = new Chart(ctx, config);
 });
 
-// Função para preencher o formulário com valores ao clicar em uma equação
 function selectEquation(eqNumber) {
     let a, b, t0, n, equationType;
 
@@ -105,7 +104,7 @@ function selectEquation(eqNumber) {
             break;
         case 6:
             // Expansão Binária: T(n) = T(n/2) + O(1)
-            equationType = 'linear'; // Aproximação, assume O(1) = 1
+            equationType = 'linear'; // O(1) = 1
             a = 0.5;
             b = 1;
             t0 = 1;
