@@ -52,6 +52,7 @@ document.getElementById('recurrence-form').addEventListener('submit', function(e
         data: data,
         options: {
             responsive: true,
+            maintainAspectRatio: false,
             scales: {
                 x: {
                     title: {
