@@ -17,32 +17,28 @@
             <!-- Coluna 1: Menu lateral com as equações de ordem 2 -->
             <div class="column equations">
                 <h2>Equações de Recorrência de Ordem 2</h2>
-                <div class="equation-item">
+                <div class="equation-item" onclick="selectEquation(1)">
                     <h3>Fibonacci</h3>
-                    <p><strong>Equação:</strong> T(n) = T(n-1) + T(n-2)</p>
-                    <p><strong>Descrição:</strong> Cada termo é a soma dos dois anteriores, famosa pela sequência de Fibonacci.</p>
-                    <button onclick="selectEquation(1)">Selecionar</button>
+                    <strong>T(n) = T(n-1) + T(n-2)</strong>
+                    <p>Cada termo é a soma dos dois anteriores, famosa sequência de Fibonacci.</p>
                 </div>
 
-                <div class="equation-item">
+                <div class="equation-item" onclick="selectEquation(2)">
                     <h3>Equação de Segunda Ordem Linear</h3>
-                    <p><strong>Equação:</strong> T(n) = aT(n-1) + bT(n-2)</p>
-                    <p><strong>Descrição:</strong> Representa uma combinação linear dos dois últimos termos da sequência.</p>
-                    <button onclick="selectEquation(2)">Selecionar</button>
+                    <strong>T(n) = aT(n-1) + bT(n-2)</strong>
+                    <p>Representa uma combinação linear dos dois últimos termos da sequência.</p>
                 </div>
 
-                <div class="equation-item">
+                <div class="equation-item" onclick="selectEquation(3)">
                     <h3>Equação Homogênea</h3>
-                    <p><strong>Equação:</strong> T(n) = aT(n-1) + bT(n-2)</p>
-                    <p><strong>Descrição:</strong> Forma homogênea com coeficientes constantes.</p>
-                    <button onclick="selectEquation(3)">Selecionar</button>
+                    <strong>T(n) = aT(n-1) + bT(n-2)</p>
+                    <p>Forma homogênea com coeficientes constantes.</strong>
                 </div>
 
-                <div class="equation-item">
+                <div class="equation-item" onclick="selectEquation(4)">
                     <h3>Equação Não Homogênea</h3>
-                    <p><strong>Equação:</strong> T(n) = aT(n-1) + bT(n-2) + f(n)</p>
-                    <p><strong>Descrição:</strong> Equação de segunda ordem não homogênea, com termo dependente de n.</p>
-                    <button onclick="selectEquation(4)">Selecionar</button>
+                    <strong>T(n) = aT(n-1) + bT(n-2) + f(n)</strong>
+                    <p>Equação de segunda ordem não homogênea, com termo dependente de n. Neste exemplo f(n) = n</p>
                 </div>
             </div>
 
